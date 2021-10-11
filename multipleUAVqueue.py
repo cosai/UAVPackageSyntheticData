@@ -346,12 +346,12 @@ def randomDataGenerator():
 def bigRandomDataGenerator(datanum:int):
     countermy=0
     with open(f"randomdata{datanum}.csv","w",buffering=1) as file1:
-        file1.write("Adistance,totaldistance,reqTimeA,reqTimeB,serviceTimeA,serviceTimeB,maxServiceA,maxServiceB,mean,std,median,amean,astd,amedian,bmean,bstd,bmedian\n") 
+        file1.write("Adistance,totaldistance,reqTimeA,reqTimeB,serviceTimeA,serviceTimeB,maxServiceA,maxServiceB,mean,std,median,amean,astd,amedian,bmean,bstd,bmedian,noOfUAVs\n") 
         while countermy<datanum:
             csvresult=randomDataGenerator()
             #if the returned result is valid then write it to file
             if csvresult != "XXX":               
-                file1.write(csvresult+"\n")
+                file1.write(csvresult+","+numberOfUAVs+"\n")
                 countermy=countermy+1
                 #print(f"data {countermy}")
             #else:
